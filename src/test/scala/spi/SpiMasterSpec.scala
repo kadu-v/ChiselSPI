@@ -6,7 +6,10 @@ import org.scalatest.matchers.should.Matchers
 import chisel3._
 import chiseltest.WriteVcdAnnotation
 
-class TopSpec extends AnyFlatSpec with ChiselScalatestTester with Matchers {
+class SpiMasterSpec
+    extends AnyFlatSpec
+    with ChiselScalatestTester
+    with Matchers {
   behavior of "Master"
   it should "transmit 0b01010101" in {
     test(new SpiMaster()).withAnnotations(Seq(WriteVcdAnnotation)) { c =>
