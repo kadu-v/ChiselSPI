@@ -7,3 +7,5 @@ project/
 target/
 .bsp/
 .DS_Store
+test_run_dir/
+out/
