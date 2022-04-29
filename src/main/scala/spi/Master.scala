@@ -39,7 +39,7 @@ class Master extends Module {
 
   // connect io
   io.rxData := rxReg
-  io.busy := false.B
+  io.busy := busy
 
   io.mosi := txReg(7)
   io.sclk := sclkReg
