@@ -9,7 +9,7 @@ import chiseltest.WriteVcdAnnotation
 class TopSpec extends AnyFlatSpec with ChiselScalatestTester with Matchers {
   behavior of "Master"
   it should "transmit 0b01010101" in {
-    test(new Master()).withAnnotations(Seq(WriteVcdAnnotation)) { c =>
+    test(new SpiMaster()).withAnnotations(Seq(WriteVcdAnnotation)) { c =>
       c.clock.step(4)
       c.io.txData.poke("b01010101".asUInt())
       c.io.miso.poke(false.B)
@@ -34,7 +34,7 @@ class TopSpec extends AnyFlatSpec with ChiselScalatestTester with Matchers {
   }
 
   it should "recieve 0b11001100" in {
-    test(new Master()).withAnnotations(Seq(WriteVcdAnnotation)) { c =>
+    test(new SpiMaster()).withAnnotations(Seq(WriteVcdAnnotation)) { c =>
       c.clock.step(4)
       c.io.txData.poke("b01010101".asUInt())
       c.io.miso.poke(false.B)

@@ -6,7 +6,7 @@ import chisel3.util._
 // mode 0
 // CPOL = 0, CPHA = 0
 // MSB
-class Master extends Module {
+class SpiMaster extends Module {
   val io = IO(new Bundle {
     val run = Input(Bool()) // H: start runnning, L: idle
     val txData = Input(UInt(8.W)) // trasmitted data
